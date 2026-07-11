@@ -182,7 +182,8 @@ if ($_POST) {
 
 <script src="./assets/js/custom.min.js"></script>
 
-<div style="position:fixed;bottom:12px;right:16px;font-size:12px;color:#fff;background:rgba(92,74,199,0.85);padding:6px 12px;border-radius:20px;font-family:'Inter',sans-serif;pointer-events:none;user-select:none;letter-spacing:0.5px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:9999;backdrop-filter:blur(4px);">Developer: LuisTj</div>
+
+
 </div>
 </body>
 

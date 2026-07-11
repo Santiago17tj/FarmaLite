@@ -10,7 +10,7 @@ if (isset($_POST['save_settings'])) {
         $connect->beginTransaction();
         
         $fields = [
-            'business_name', 'nit', 'address', 'phone', 'email', 
+            'business_name', 'subtitle', 'nit', 'address', 'phone', 'email', 
             'currency', 'printer_width', 'backup_days', 'low_stock_threshold'
         ];
         
@@ -137,8 +137,13 @@ $settings = $_SESSION['settings'] ?? [];
                                     <form action="" method="POST" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-md-6 form-group">
-                                                <label>Nombre del Negocio (FarmaLite)</label>
+                                                <label>Nombre del Negocio</label>
                                                 <input type="text" class="form-control" name="business_name" value="<?php echo htmlspecialchars($settings['business_name'] ?? ''); ?>" required>
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label>Eslogan / Subtítulo</label>
+                                                <input type="text" class="form-control" name="subtitle" value="<?php echo htmlspecialchars($settings['subtitle'] ?? ''); ?>" placeholder="Ej: Salud y bienestar para tu familia">
+                                                <small class="text-muted">Aparece en la factura debajo del nombre</small>
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <label>NIT / Identificación Fiscal</label>

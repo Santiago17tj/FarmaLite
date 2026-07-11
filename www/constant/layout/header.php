@@ -19,7 +19,7 @@ require_once "./constant/pharmacy.php";
 
             <div class="navbar-header">
                 <a class="navbar-brand" href="dashboard.php" style="display:flex;align-items:center;padding:4px 8px;">
-                    <img src="./assets/runtime/logo.png" alt="Droguería La Fórmula" style="height:65px;width:auto;object-fit:contain;transform: scale(1.15);transform-origin: left center;" />
+                    <img src="./assets/runtime/logo.png" alt="<?php echo PHARMACY_NAME; ?>" style="height:65px;width:auto;object-fit:contain;transform: scale(1.15);transform-origin: left center;" />
                 </a>
             </div>
 

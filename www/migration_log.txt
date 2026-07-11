@@ -1,0 +1,45 @@
+15:34:31 - OK: php_action/order.php
+15:34:31 - OK: php_action/createBrand.php
+15:34:31 - OK: php_action/createCategories.php
+15:34:31 - OK: php_action/createProduct.php
+15:34:31 - OK: php_action/createUser.php
+15:34:31 - OK: php_action/editBrand.php
+15:34:31 - OK: php_action/editCategories.php
+15:34:31 - OK: php_action/editProduct.php
+15:34:31 - OK: php_action/editUser.php
+15:34:31 - OK: php_action/removeBrand.php
+15:34:31 - OK: php_action/removeCategories.php
+15:34:31 - OK: php_action/removeProduct.php
+15:34:31 - OK: php_action/removeOrder.php
+15:34:31 - OK: php_action/removeUser.php
+15:34:31 - OK: php_action/fetchBrand.php
+15:34:31 - OK: php_action/fetchCategories.php
+15:34:31 - OK: php_action/fetchProduct.php
+15:34:31 - OK: php_action/fetchUser.php
+15:34:32 - OK: php_action/fetchSelectedBrand.php
+15:34:32 - OK: php_action/fetchSelectedCategories.php
+15:34:32 - OK: php_action/fetchSelectedProduct.php
+15:34:32 - OK: php_action/fetchSelectedUser.php
+15:34:32 - OK: php_action/fetchProductData.php
+15:34:32 - OK: php_action/fetchProductImageUrl.php
+15:34:32 - OK: php_action/fetchOrderData.php
+15:34:32 - OK: php_action/fetchProductByBarcode.php
+15:34:32 - OK: php_action/editProductImage.php
+15:34:32 - OK: php_action/editPayment.php
+15:34:32 - OK: php_action/changePassword.php
+15:34:32 - OK: php_action/changeUsername.php
+15:34:32 - OK: php_action/editOrder.php
+15:34:32 - REGEX OK: php_action/printOrder.php
+15:34:32 - REGEX OK: php_action/getOrderReport.php
+15:34:32 - REGEX OK: php_action/getsalereport.php
+15:34:32 - REGEX OK: php_action/getexpproduct.php
+15:34:32 - REGEX OK: php_action/salesReportHelper.php
+15:34:32 - REGEX OK: php_action/fetchOrder.php
+15:34:32 - REGEX OK: php_action/createBrandImport.php
+15:34:32 - REGEX OK: php_action/createProductImport.php
+15:34:32 - REGEX OK: editproduct.php
+15:34:32 - REGEX OK: assets/pages/save_user.php
+15:34:32 - 
+15:34:32 - === MIGRATION COMPLETE ===
+15:34:32 - Files written: 41
+15:34:32 - Files failed: 0

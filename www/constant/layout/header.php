@@ -1,0 +1,66 @@
+<?php
+
+require_once "./constant/connect.php";
+require_once "./constant/pharmacy.php";
+?>
+
+<div id="main-wrapper">
+
+    <div class="header">
+        <div class="d-lg-none d-block" style="overflow:hidden;white-space:nowrap;">
+            <div class="ml-lg-5 pl-lg-5 ">
+
+                <b id="ti" class="ml-lg-5 pl-lg-5"></b>
+
+
+            </div>
+        </div>
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="dashboard.php" style="display:flex;align-items:center;padding:4px 8px;">
+                    <img src="./assets/runtime/logo.png" alt="Droguería La Fórmula" style="height:65px;width:auto;object-fit:contain;transform: scale(1.15);transform-origin: left center;" />
+                </a>
+            </div>
+
+            <div class="navbar-collapse">
+
+                <ul class="navbar-nav  mt-md-0">
+
+                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                    <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+
+
+
+                </ul>
+
+                <ul class="navbar-nav my-lg-0 ml-auto">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                            <img src="./assets/uploadImage/Profile/usuario-admin.png" alt="user" class="profile-pic" /></a>
+                        <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                            <ul class="dropdown-user">
+                                <?php if (
+                                    isset($_SESSION["userId"]) &&
+                                    $_SESSION["userId"] == 1
+                                ) { ?>
+                                <?php } ?>
+
+                                <li><a href="./constant/logout.php"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <script language="javascript">
+        var today = new Date();
+        document.getElementById('ti').innerHTML = today;
+
+
+    </script>

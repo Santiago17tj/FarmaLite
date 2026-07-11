@@ -1,0 +1,69 @@
+================================================================================
+  LA FORMULA - Acceso directo en el Escritorio (Windows)
+================================================================================
+
+TECNOLOGÍA DEL PROYECTO
+-----------------------
+  - Aplicación web: PHP + MySQL (MariaDB)
+  - Servidor local: XAMPP (Apache + MySQL)
+  - No es un .exe independiente; se abre en el navegador
+  - URL del sistema: http://localhost/farmacia/login.php
+
+ARCHIVOS INCLUIDOS (carpeta scripts\)
+-------------------------------------
+  launcher-la-formula.bat   Inicia XAMPP si hace falta y abre el navegador
+  launcher-la-formula.vbs   Igual, pero sin ventana negra de consola
+  crear-acceso-directo.ps1  Genera el icono en el Escritorio
+  CREAR-ACCESO-DIRECTO.bat  Doble clic para ejecutar el script anterior
+
+INSTALACIÓN EN LA PC DEL CLIENTE (una sola vez)
+-----------------------------------------------
+
+  PASO 1 - Instalar XAMPP
+    Descargar desde: https://www.apachefriends.org/
+    Instalar en la ruta por defecto: C:\xampp
+
+  PASO 2 - Copiar el programa
+    Copiar toda la carpeta del proyecto a:
+      C:\xampp\htdocs\farmacia
+
+  PASO 3 - Base de datos
+    Abrir XAMPP Control Panel, iniciar Apache y MySQL.
+    En phpMyAdmin (http://localhost/phpmyadmin) importar el archivo:
+      farmacia.sql
+
+  PASO 4 - Crear el acceso directo
+    Ir a la carpeta scripts dentro del proyecto y hacer doble clic en:
+      CREAR-ACCESO-DIRECTO.bat
+
+    Aparecerá en el Escritorio:
+      "LA FORMULA - Droguería"
+
+  PASO 5 - Probar
+    Doble clic en el acceso directo del Escritorio.
+    Debe abrirse el navegador con la pantalla de login.
+
+USO DIARIO
+----------
+  Solo doble clic en "LA FORMULA - Droguería" del Escritorio.
+  No hace falta abrir Cursor, terminal ni XAMPP manualmente.
+
+SI XAMPP ESTÁ EN OTRA CARPETA
+-----------------------------
+  Editar scripts\launcher-la-formula.bat
+  Cambiar la línea:  set "XAMPP=C:\xampp"
+  Por ejemplo:       set "XAMPP=D:\Programas\xampp"
+
+CREDENCIALES POR DEFECTO (cambiar en producción)
+------------------------------------------------
+  Email: hola@configuroweb.com
+  Clave: 1234abcd..
+
+SOPORTE
+-------
+  Si el navegador dice "No se puede acceder":
+    - Verificar que XAMPP esté instalado
+    - Ejecutar XAMPP Control Panel y comprobar Apache + MySQL en verde
+    - Confirmar que existe C:\xampp\htdocs\farmacia\login.php
+
+================================================================================

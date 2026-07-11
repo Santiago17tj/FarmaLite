@@ -1,0 +1,46 @@
+# Databases (Datos del cliente)
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups
+www/backups/
+backups/
+*.bak
+*.zip
+
+# Logs
+logs/
+*.log
+
+# Cache
+cache/
+webcache/
+
+# Uploads y archivos de runtime
+www/assets/runtime/
+www/assets/uploadImage/Logo/
+uploads/
+
+# IDE y Entornos
+.vscode/
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Output del instalador
+Output/
+temp/
+
+# Motor PHP Desktop (No subir a GitHub)
+*.dll
+*.pak
+*.bin
+*.dat
+FarmaLite.exe
+locales/
+php/
+settings.json
+vk_swiftshader_icd.json

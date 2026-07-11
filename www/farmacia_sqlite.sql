@@ -113,4 +113,4 @@ CREATE TABLE IF NOT EXISTS "users" (
 );
 
 INSERT INTO "users" ("user_id", "username", "password", "email") VALUES
-(1, 'Administrador', '$2y$10$YFobdekFiL6rMqTdunKKLOqwBurER.cVnZZLgr3QXaA1ACdlsaG9.', 'laformula.salud@gmail.com');
+(1, 'Administrador', '$2y$10$YFobdekFiL6rMqTdunKKLOqwBurER.cVnZZLgr3QXaA1ACdlsaG9.', 'admin@admin.com');

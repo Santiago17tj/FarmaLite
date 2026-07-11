@@ -11,6 +11,7 @@ SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
 DisableProgramGroupPage=yes
 PrivilegesRequired=admin
+SetupIconFile=logo.ico
 
 [Dirs]
 ; Crear carpetas en ProgramData con permisos de modificación para todos los usuarios
@@ -31,6 +32,7 @@ Source: "*.pak"; DestDir: "{app}"; Flags: ignoreversion
 Source: "*.bin"; DestDir: "{app}"; Flags: ignoreversion
 Source: "*.dat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "settings.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "logo.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 ; Carpetas necesarias de PHP Desktop
 Source: "locales\*"; DestDir: "{app}\locales"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -43,8 +45,8 @@ Source: "www\*"; DestDir: "{app}\www"; Flags: ignoreversion recursesubdirs creat
 Source: "www\database\farmacia_template.db"; DestDir: "{commonappdata}\FarmaLite\data"; DestName: "farmacia.db"; Flags: onlyifdoesntexist uninsneveruninstall
 
 [Icons]
-Name: "{autodesktop}\FarmaLite"; Filename: "{app}\FarmaLite.exe"
-Name: "{group}\FarmaLite"; Filename: "{app}\FarmaLite.exe"
+Name: "{autodesktop}\FarmaLite"; Filename: "{app}\FarmaLite.exe"; IconFilename: "{app}\logo.ico"
+Name: "{group}\FarmaLite"; Filename: "{app}\FarmaLite.exe"; IconFilename: "{app}\logo.ico"
 Name: "{group}\Desinstalar FarmaLite"; Filename: "{uninstallexe}"
 
 [Code]

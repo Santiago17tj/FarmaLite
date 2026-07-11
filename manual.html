@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual de Usuario - FarmaLite POS</title>
+  <style>
+    :root {
+      --primary: #0f62fe;
+      --secondary: #ff3b30;
+      --text: #2d3748;
+      --light-bg: #f7fafc;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background-color: #f0f2f5;
+      padding: 40px 20px;
+    }
+
+    .page {
+      background: #ffffff;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      padding: 50px 60px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    /* Portada */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 650px;
+      text-align: center;
+    }
+
+    .cover-logo {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 30px;
+    }
+
+    .cover-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .cover-subtitle {
+      font-size: 20px;
+      color: #718096;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .badge {
+      background-color: var(--light-bg);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 60px;
+    }
+
+    .cover-footer {
+      font-size: 13px;
+      color: #a0aec0;
+      margin-top: auto;
+    }
+
+    /* Contenido */
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--light-bg);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 15px;
+      color: #4a5568;
+    }
+
+    ul, ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #4a5568;
+    }
+
+    .step-number {
+      background-color: var(--primary);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .highlight-box {
+      background-color: var(--light-bg);
+      border-left: 4px solid var(--primary);
+      padding: 15px 20px;
+      border-radius: 0 6px 6px 0;
+      margin: 20px 0;
+      font-size: 14.5px;
+    }
+
+    .highlight-box.warning {
+      border-left-color: var(--secondary);
+      background-color: #fffaf0;
+    }
+
+    .footer-page {
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #a0aec0;
+    }
+
+    kbd {
+      background-color: #edf2f7;
+      border: 1px solid #cbd5e0;
+      border-radius: 3px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+      color: #4a5568;
+      display: inline-block;
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.4;
+      padding: 2px 6px;
+      white-space: nowrap;
+    }
+
+    /* Estilos de Impresión */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        page-break-after: always;
+        max-width: 100%;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      /* Ocultar elementos de navegación del navegador */
+      @page {
+        size: letter;
+        margin: 20mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <div class="page">
+    <div class="cover">
+      <img src="www/assets/runtime/logo.png" class="cover-logo" alt="Logo FarmaLite">
+      <h1 class="cover-title">FarmaLite</h1>
+      <p class="cover-subtitle">Sistema de Control de Inventario y Punto de Venta</p>
+      <div class="badge">MANUAL DE USUARIO OFICIAL</div>
+      
+      <div class="highlight-box" style="max-width: 500px; text-align: left;">
+        <strong>Listo para Vender:</strong> Este sistema fue diseñado para operar con máxima velocidad, confiabilidad y sencillez técnica. No requiere configuraciones complejas de red ni servicios externos.
+      </div>
+
+      <div class="cover-footer">
+        <p>© 2026 FarmaLite. Marca Blanca Registrada.</p>
+        <p>Documentación de Soporte y Operación de Caja</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGINA 1: GUIA CAJERO -->
+  <div class="page">
+    <h2><span class="step-number">1</span> Operaciones del Cajero (Venta Diaria)</h2>
+    <p>Siga estos sencillos pasos para gestionar el flujo diario de la droguería con total precisión:</p>
+    
+    <ol>
+      <li><strong>Apertura de Caja:</strong> Al iniciar el día, acceda a <em>Caja -> Apertura de Caja</em>. Ingrese el dinero en efectivo base destinado a dar cambios y registre la apertura.</li>
+      <li><strong>Registro de Ventas:</strong> Diríjase a <em>Facturas -> Crear Factura</em>.
+        <ul>
+          <li>Use el lector de código de barras para escanear los productos o escriba su nombre en el buscador.</li>
+          <li>Seleccione el lote y fecha de vencimiento correctos antes de agregar el producto a la lista.</li>
+        </ul>
+      </li>
+      <li><strong>Procesar Pago:</strong> Seleccione el método de pago (Efectivo, Tarjeta, Nequi, etc.). Digite el valor entregado por el cliente y el sistema calculará inmediatamente el cambio a devolver.</li>
+      <li><strong>Impresión del Ticket:</strong> Al dar clic en <em>Guardar y Facturar</em>, el sistema enviará la orden a la impresora térmica de 58mm o 80mm configurada.</li>
+    </ol>
+
+    <div class="highlight-box">
+      <strong>⚡ Atajo Rápido (Tecla F3):</strong> En cualquier momento de la venta, presione la tecla <kbd>F3</kbd> para abrir el <strong>Consultor Rápido de Precios</strong>. Escanee un producto para ver al instante su precio, stock disponible, lote y vencimiento sin interrumpir la factura actual.
+    </div>
+
+    <h2><span class="step-number">2</span> Cierre de Caja</h2>
+    <p>Al finalizar la jornada laboral o el cambio de turno, realice el cuadre de caja:</p>
+    <ul>
+      <li>Acceda a <em>Caja -> Cierre de Caja</em>.</li>
+      <li>Cuente el efectivo físico en la caja registradora e ingrese el total.</li>
+      <li>Presione <em>Cerrar Caja</em> para generar el informe de ventas, donde se indicará el cuadre contable y posibles faltantes o sobrantes.</li>
+    </ul>
+
+    <div class="footer-page">
+      <span>FarmaLite LTS — Manual de Usuario</span>
+      <span>Página 1</span>
+    </div>
+  </div>
+
+  <!-- PAGINA 2: ADMINISTRACION Y SEGURIDAD -->
+  <div class="page">
+    <h2><span class="step-number">3</span> Administración y Marca Blanca</h2>
+    <p>El administrador puede adaptar la identidad del sistema de acuerdo a la droguería correspondiente:</p>
+    
+    <ol>
+      <li><strong>Personalización de Datos:</strong> Ingrese a <em>Configuración -> Configuración de Empresa</em>. Desde allí podrá establecer el nombre comercial, NIT/RUT fiscal, dirección de contacto y teléfono.</li>
+      <li><strong>Subir Logo Corporativo:</strong> Suba el logo en formato PNG. Este se adaptará automáticamente a la parte superior de la factura impresa y en la barra de navegación del sistema.</li>
+      <li><strong>Reglas de Negocio:</strong> Ajuste el umbral de alerta para "Stock Bajo" y programe el número de días para recordatorios de respaldo.</li>
+    </ol>
+
+    <div class="highlight-box warning">
+      <strong>⚠️ Copias de Respaldo (Backups):</strong> La base de datos es local y segura. Para evitar pérdidas ante fallos del disco duro, vaya a <em>Configuración -> Respaldos</em> semanalmente y guarde el archivo descargado en una memoria USB externa.
+    </div>
+
+    <h2><span class="step-number">4</span> Auditoría y Registro</h2>
+    <p>El sistema cuenta con un registro de auditoría integrado que documenta todas las acciones de seguridad críticas realizadas por los usuarios (como eliminación de facturas, modificación de stock, cambios de precios o ingresos no autorizados).</p>
+
+    <div class="footer-page">
+      <span>FarmaLite LTS — Manual de Usuario</span>
+      <span>Página 2</span>
+    </div>
+  </div>
+
+</body>
+</html>

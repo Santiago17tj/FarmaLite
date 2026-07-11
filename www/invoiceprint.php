@@ -231,8 +231,16 @@ function fmtMoney($n) {
 
 <div class="receipt">
 	<div class="center">
+		<?php
+		// Logo del negocio (si existe)
+		$logoPath = ROOT_PATH . '/assets/runtime/logo.png';
+		if (file_exists($logoPath)): ?>
+		<img src="./assets/runtime/logo.png" class="logo" alt="<?php echo PHARMACY_NAME; ?>" />
+		<?php endif; ?>
 		<div class="title" style="font-size: 18px; margin-bottom: 5px;"><?php echo PHARMACY_NAME; ?></div>
 		<div style="font-size:12px;"><?php echo PHARMACY_SUBTITLE; ?></div>
+		<?php if (PHARMACY_NIT !== ''): ?><div style="font-size:11px; margin-top: 2px;">NIT: <?php echo PHARMACY_NIT; ?></div><?php endif; ?>
+		<?php if (PHARMACY_ADDRESS !== ''): ?><div style="font-size:11px;"><?php echo PHARMACY_ADDRESS; ?></div><?php endif; ?>
 		<?php if (PHARMACY_PHONE !== ''): ?><div style="font-size:12px; font-weight: bold; margin-top: 2px;">Tel: <?php echo PHARMACY_PHONE; ?></div><?php endif; ?>
 	</div>
 

@@ -230,26 +230,34 @@ $countLowStock2 = $connect->query("SELECT COUNT(*) FROM orders WHERE delete_stat
     })
 </script>
 <script>
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
+    if (typeof google !== 'undefined' && google.charts) {
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Medicamento', 'Cantidad'], <?php echo $datavalue1; ?>
-        ]);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Medicamento', 'Cantidad'], <?php echo $datavalue1; ?>
+            ]);
 
-        var options = {
-            title: 'Stock de Medicamentos',
-            is3D: true
-        };
+            var options = {
+                title: 'Stock de Medicamentos',
+                is3D: true
+            };
 
-        var chart = new google.visualization.PieChart(document.getElementById('myChart'));
-        chart.draw(data, options);
+            var el1 = document.getElementById('myChart');
+            if (el1) {
+                var chart = new google.visualization.PieChart(el1);
+                chart.draw(data, options);
+            }
 
-        var chart = new google.visualization.BarChart(document.getElementById('myChart1'));
-        chart.draw(data, options);
+            var el2 = document.getElementById('myChart1');
+            if (el2) {
+                var chart2 = new google.visualization.BarChart(el2);
+                chart2.draw(data, options);
+            }
+        }
     }
 </script>
 

@@ -86,7 +86,7 @@
 
     /* Contenido */
     h2 {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--primary);
       margin-top: 30px;
@@ -100,7 +100,7 @@
 
     p {
       margin-bottom: 15px;
-      font-size: 15px;
+      font-size: 14.5px;
       color: #4a5568;
     }
 
@@ -111,7 +111,7 @@
 
     li {
       margin-bottom: 10px;
-      font-size: 15px;
+      font-size: 14.5px;
       color: #4a5568;
     }
 
@@ -134,8 +134,8 @@
       border-left: 4px solid var(--primary);
       padding: 15px 20px;
       border-radius: 0 6px 6px 0;
-      margin: 20px 0;
-      font-size: 14.5px;
+      margin: 15px 0;
+      font-size: 14px;
     }
 
     .highlight-box.warning {
@@ -144,7 +144,7 @@
     }
 
     .footer-page {
-      margin-top: 50px;
+      margin-top: 40px;
       border-top: 1px solid var(--border);
       padding-top: 15px;
       display: flex;
@@ -203,12 +203,12 @@
       <div class="badge">MANUAL DE USUARIO OFICIAL</div>
       
       <div class="highlight-box" style="max-width: 500px; text-align: left;">
-        <strong>Listo para Vender:</strong> Este sistema fue diseñado para operar con máxima velocidad, confiabilidad y sencillez técnica. No requiere configuraciones complejas de red ni servicios externos.
+        <strong>Solución Integral:</strong> Este sistema fue diseñado para operar con máxima velocidad y ofrecer control total sobre su negocio. No requiere internet permanente ni servicios externos.
       </div>
 
       <div class="cover-footer">
         <p>© 2026 FarmaLite. Marca Blanca Registrada.</p>
-        <p>Documentación de Soporte y Operación de Caja</p>
+        <p>Documentación de Soporte, Operación y Gerencia</p>
       </div>
     </div>
   </div>
@@ -216,30 +216,30 @@
   <!-- PAGINA 1: GUIA CAJERO -->
   <div class="page">
     <h2><span class="step-number">1</span> Operaciones del Cajero (Venta Diaria)</h2>
-    <p>Siga estos sencillos pasos para gestionar el flujo diario de la droguería con total precisión:</p>
+    <p>Siga estos pasos para gestionar el flujo de ventas con sus clientes de manera ágil y precisa:</p>
     
     <ol>
-      <li><strong>Apertura de Caja:</strong> Al iniciar el día, acceda a <em>Caja -> Apertura de Caja</em>. Ingrese el dinero en efectivo base destinado a dar cambios y registre la apertura.</li>
+      <li><strong>Apertura de Caja:</strong> Al iniciar el día o turno, acceda a <em>Caja -> Apertura de Caja</em>. Ingrese el dinero en efectivo base destinado a dar cambios (base).</li>
       <li><strong>Registro de Ventas:</strong> Diríjase a <em>Facturas -> Crear Factura</em>.
         <ul>
-          <li>Use el lector de código de barras para escanear los productos o escriba su nombre en el buscador.</li>
-          <li>Seleccione el lote y fecha de vencimiento correctos antes de agregar el producto a la lista.</li>
+          <li>Use el <strong>lector de código de barras</strong> para escanear los productos o escriba su nombre en el buscador.</li>
+          <li>Verifique el lote y la fecha de vencimiento antes de agregar el producto a la orden.</li>
         </ul>
       </li>
-      <li><strong>Procesar Pago:</strong> Seleccione el método de pago (Efectivo, Tarjeta, Nequi, etc.). Digite el valor entregado por el cliente y el sistema calculará inmediatamente el cambio a devolver.</li>
-      <li><strong>Impresión del Ticket:</strong> Al dar clic en <em>Guardar y Facturar</em>, el sistema enviará la orden a la impresora térmica de 58mm o 80mm configurada.</li>
+      <li><strong>Procesar Pago:</strong> Seleccione el método de pago (Efectivo, Tarjeta, etc.). Digite el billete o valor entregado por el cliente y el sistema calculará inmediatamente el cambio a devolver.</li>
+      <li><strong>Impresión del Ticket:</strong> Al dar clic en <em>Guardar y Facturar</em>, el sistema registrará la venta y enviará la orden a la impresora térmica (58mm o 80mm).</li>
     </ol>
 
     <div class="highlight-box">
-      <strong>⚡ Atajo Rápido (Tecla F3):</strong> En cualquier momento de la venta, presione la tecla <kbd>F3</kbd> para abrir el <strong>Consultor Rápido de Precios</strong>. Escanee un producto para ver al instante su precio, stock disponible, lote y vencimiento sin interrumpir la factura actual.
+      <strong>⚡ Atajo Rápido (Tecla F3):</strong> En cualquier momento de la venta, presione la tecla <kbd>F3</kbd> para abrir el <strong>Consultor Rápido de Precios</strong>. Escanee un producto para ver al instante su precio, stock disponible y vencimiento sin interrumpir al cliente que está atendiendo.
     </div>
 
     <h2><span class="step-number">2</span> Cierre de Caja</h2>
-    <p>Al finalizar la jornada laboral o el cambio de turno, realice el cuadre de caja:</p>
+    <p>Al finalizar el turno de trabajo, el cajero debe realizar el cuadre contable:</p>
     <ul>
       <li>Acceda a <em>Caja -> Cierre de Caja</em>.</li>
-      <li>Cuente el efectivo físico en la caja registradora e ingrese el total.</li>
-      <li>Presione <em>Cerrar Caja</em> para generar el informe de ventas, donde se indicará el cuadre contable y posibles faltantes o sobrantes.</li>
+      <li>Cuente el efectivo físico en la caja registradora e ingrese la cantidad.</li>
+      <li>Presione <em>Cerrar Caja</em>. El sistema emitirá el <strong>Informe de Cierre</strong> indicando las ventas por cada método de pago y calculará si existen faltantes o sobrantes.</li>
     </ul>
 
     <div class="footer-page">
@@ -248,27 +248,68 @@
     </div>
   </div>
 
-  <!-- PAGINA 2: ADMINISTRACION Y SEGURIDAD -->
+  <!-- PAGINA 2: INVENTARIO -->
   <div class="page">
-    <h2><span class="step-number">3</span> Administración y Marca Blanca</h2>
-    <p>El administrador puede adaptar la identidad del sistema de acuerdo a la droguería correspondiente:</p>
+    <h2><span class="step-number">3</span> Gestión de Inventario y Medicamentos</h2>
+    <p>El control del inventario es el corazón de la droguería. Mantenga sus productos organizados:</p>
     
     <ol>
-      <li><strong>Personalización de Datos:</strong> Ingrese a <em>Configuración -> Configuración de Empresa</em>. Desde allí podrá establecer el nombre comercial, NIT/RUT fiscal, dirección de contacto y teléfono.</li>
-      <li><strong>Subir Logo Corporativo:</strong> Suba el logo en formato PNG. Este se adaptará automáticamente a la parte superior de la factura impresa y en la barra de navegación del sistema.</li>
-      <li><strong>Reglas de Negocio:</strong> Ajuste el umbral de alerta para "Stock Bajo" y programe el número de días para recordatorios de respaldo.</li>
+      <li><strong>Crear un Medicamento:</strong> Vaya a <em>Medicamentos -> Agregar Medicamento</em>. Llene los datos básicos como nombre genérico, marca, código de barras, categoría y precio de venta.</li>
+      <li><strong>Control de Lotes y Vencimientos:</strong> A diferencia de otros comercios, en una droguería un mismo medicamento puede tener múltiples fechas de caducidad.
+        <ul>
+          <li>Al ingresar inventario, asigne siempre el <strong>Número de Lote</strong> y la <strong>Fecha de Vencimiento</strong>.</li>
+          <li>El sistema descontará automáticamente del lote más antiguo al momento de vender.</li>
+        </ul>
+      </li>
+      <li><strong>Alertas de Vencimiento:</strong> Revise periódicamente la sección <em>Medicamentos -> Por Vencer</em> para identificar productos próximos a caducar y aplicar promociones o devoluciones a tiempo.</li>
     </ol>
 
     <div class="highlight-box warning">
-      <strong>⚠️ Copias de Respaldo (Backups):</strong> La base de datos es local y segura. Para evitar pérdidas ante fallos del disco duro, vaya a <em>Configuración -> Respaldos</em> semanalmente y guarde el archivo descargado en una memoria USB externa.
+      <strong>⚠️ Alerta de Stock Bajo:</strong> El sistema monitorea sus cantidades. Cuando un producto llegue al nivel mínimo (configurable), aparecerá en la alerta de reabastecimiento para evitar que se quede sin mercancía.
     </div>
 
-    <h2><span class="step-number">4</span> Auditoría y Registro</h2>
-    <p>El sistema cuenta con un registro de auditoría integrado que documenta todas las acciones de seguridad críticas realizadas por los usuarios (como eliminación de facturas, modificación de stock, cambios de precios o ingresos no autorizados).</p>
+    <h2><span class="step-number">4</span> Compras y Proveedores</h2>
+    <p>Registre la mercancía que ingresa para mantener un costeo adecuado y un historial limpio:</p>
+    <ul>
+      <li><strong>Registrar Proveedores:</strong> En <em>Proveedores -> Agregar</em>, guarde los datos de los laboratorios o distribuidoras (NIT, contacto, teléfono).</li>
+      <li><strong>Ingresar Mercancía (Compras):</strong> Vaya a <em>Compras -> Nueva Compra</em>. Seleccione al proveedor, escanee los productos que llegaron en el pedido, ingrese el costo de compra y el nuevo lote. Esto actualizará su inventario automáticamente.</li>
+    </ul>
 
     <div class="footer-page">
       <span>FarmaLite LTS — Manual de Usuario</span>
       <span>Página 2</span>
+    </div>
+  </div>
+
+  <!-- PAGINA 3: ADMINISTRACION Y REPORTES -->
+  <div class="page">
+    <h2><span class="step-number">5</span> Reportes Gerenciales (Dashboard)</h2>
+    <p>FarmaLite está diseñado para darle al dueño de la droguería visibilidad total de su negocio en tiempo real. Al iniciar sesión, la pantalla principal (Dashboard) mostrará:</p>
+    
+    <ul>
+      <li><strong>Resumen Financiero:</strong> Total de ingresos del día, ingresos del mes y comparativas.</li>
+      <li><strong>Gráficos de Movimiento:</strong> Visualice qué medicamentos tienen mayor rotación y cuáles se están quedando estancados.</li>
+      <li><strong>Reportes Detallados:</strong> Vaya a <em>Reportes</em> para exportar en PDF o Excel el historial de ventas por fecha, cajero o categoría. Esto es ideal para entregar a su contador.</li>
+    </ul>
+
+    <h2><span class="step-number">6</span> Configuración y Marca Blanca</h2>
+    <p>Personalice el sistema para que refleje la identidad de su droguería:</p>
+    <ol>
+      <li>Vaya a <em>Configuración -> Configuración de Empresa</em>.</li>
+      <li>Modifique el nombre comercial, el NIT o RUT, la dirección y su eslogan.</li>
+      <li>Estos datos y su logo corporativo aparecerán automáticamente en el encabezado de todas las facturas impresas y reportes.</li>
+    </ol>
+
+    <h2><span class="step-number">7</span> Seguridad y Auditoría</h2>
+    <p>Proteja la integridad de su información comercial:</p>
+    <ul>
+      <li><strong>Auditoría Interna:</strong> FarmaLite registra un historial invisible de seguridad. El administrador puede revisar quién eliminó una factura, quién modificó un precio o si hubo intentos de acceso no autorizados.</li>
+      <li><strong>Copias de Seguridad (Backups):</strong> Sus datos son 100% suyos y privados. Vaya a <em>Configuración -> Respaldos</em> semanalmente y guarde el archivo generado en una memoria USB para prevenir pérdidas por daños en su computadora.</li>
+    </ul>
+
+    <div class="footer-page">
+      <span>FarmaLite LTS — Manual de Usuario</span>
+      <span>Página 3</span>
     </div>
   </div>
 

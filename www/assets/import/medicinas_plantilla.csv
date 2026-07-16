@@ -1,3 +1,18 @@
+﻿# ============================================================
+# PLANTILLA DE IMPORTACION MASIVA - FarmaLite POS
+# ============================================================
+# INSTRUCCIONES:
+# 1. Elimine estas filas de comentarios (las que empiezan con #) antes de importar.
+# 2. La primera fila de datos DEBE ser la cabecera (nombres de columna).
+# 3. El campo 'codigo_barras' es opcional. Si no tiene codigo, dejelo en blanco.
+# 4. 'proveedor' y 'categoria' deben coincidir exactamente con los que ya existen en el sistema.
+# 5. 'precio_compra' y 'precio_venta' van en pesos colombianos, sin puntos ni comas. Ej: 15000
+# 6. 'vencimiento' va en formato AAAA-MM-DD. Ej: 2027-06-30
+# 7. Si un medicamento ya existe (mismo codigo de barras), la fila sera OMITIDA.
+# ============================================================
 codigo_barras,nombre_medicina,proveedor,categoria,precio_compra,precio_venta,stock,lote,vencimiento
-7700000010001,Acetaminofen 500,Cipla,Pastillas,20,30,50,307002,2045-02-28
-7700000010002,Fronta 23,Mankind,Pastillas,100,150,30,307003,2026-12-31
+7702001520039,Acetaminofen 500mg Tab x10,Genfar,Analgesicos,800,1500,200,GF-2024-01,2027-06-30
+7702001520046,Ibuprofeno 400mg Tab x10,Genfar,Antiinflamatorios,1000,2000,150,GF-2024-02,2027-08-15
+7702001520053,Loratadina 10mg Tab x10,La Sante,Antihistaminicos,600,1200,100,LS-2024-01,2027-03-20
+,Suero Oral Litro,Amarilo,Hidratacion,3000,5500,50,AM-2024-03,2027-01-10
+,Vicks VapoRub 100g,Procter and Gamble,Topicos,8000,12000,30,PG-2024-01,2027-12-31

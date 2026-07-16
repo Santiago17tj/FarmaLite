@@ -127,14 +127,33 @@ echo "<div class='div-request div-hide'>add</div>";
 
                 </div>
 
+                <!-- Buscador: tabs para código de barras o nombre manual -->
                 <div class="form-group">
                   <div class="row">
-                    <label class="col-sm-2 control-label"><i class="fa fa-barcode"></i> Escanear código</label>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" id="barcodeScan" placeholder="Escanea el código de barras del medicamento..." autocomplete="off" />
-                      <small class="text-muted">Escanea con el lector USB o presiona <kbd>F2</kbd> para consultar precio sin salir de la factura.</small>
+                    <label class="col-sm-2 control-label"><i class="fa fa-search"></i> Agregar producto</label>
+                    <div class="col-sm-8">
+                      <!-- Tabs de modo de búsqueda -->
+                      <ul class="nav nav-tabs" style="margin-bottom:10px;" id="searchModeTabs">
+                        <li class="active"><a href="#tab-barcode" data-toggle="tab"><i class="fa fa-barcode"></i> Código de barras</a></li>
+                        <li><a href="#tab-manual" data-toggle="tab"><i class="fa fa-keyboard-o"></i> Búsqueda manual</a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <!-- Tab 1: Código de barras -->
+                        <div class="tab-pane active" id="tab-barcode">
+                          <input type="text" class="form-control" id="barcodeScan" placeholder="Escanea el código de barras del medicamento..." autocomplete="off" />
+                          <small class="text-muted">Escanea con el lector USB o presiona <kbd>F2</kbd> para consultar precio sin salir de la factura.</small>
+                        </div>
+                        <!-- Tab 2: Búsqueda manual por nombre -->
+                        <div class="tab-pane" id="tab-manual">
+                          <div style="position:relative;">
+                            <input type="text" class="form-control" id="manualProductSearch" placeholder="Escribe el nombre del medicamento..." autocomplete="off" />
+                            <div id="manualSearchResults" style="display:none;position:absolute;z-index:1000;background:#fff;border:1px solid #ddd;border-radius:4px;width:100%;max-height:220px;overflow-y:auto;box-shadow:0 4px 8px rgba(0,0,0,.12);"></div>
+                          </div>
+                          <small class="text-muted">Escribe al menos 2 letras. El producto se agregará automáticamente a la factura.</small>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                       <div id="barcodeFeedback" class="alert alert-info" style="display:none;margin:0;padding:8px 12px;"></div>
                     </div>
                   </div>
@@ -1190,4 +1209,73 @@ echo "<div class='div-request div-hide'>add</div>";
       alert('Error ! Refresh the page again');
     }
   }
+
+  // =============================================
+  // BÚSQUEDA MANUAL POR NOMBRE (sin código de barras)
+  // =============================================
+  var manualSearchTimer = null;
+
+  $('#manualProductSearch').on('input', function() {
+    clearTimeout(manualSearchTimer);
+    var q = $(this).val().trim();
+    if (q.length < 2) {
+      $('#manualSearchResults').hide().empty();
+      return;
+    }
+    manualSearchTimer = setTimeout(function() {
+      $.getJSON('php_action/searchProductByName.php', { q: q }, function(results) {
+        var $list = $('#manualSearchResults').empty();
+        if (results.length === 0) {
+          $list.html('<div style="padding:10px 14px;color:#888;">No se encontró ningún medicamento con ese nombre.</div>').show();
+          return;
+        }
+        $.each(results, function(i, item) {
+          var price = parseFloat(item.sell_price).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
+          var $row = $('<div style="padding:9px 14px;cursor:pointer;border-bottom:1px solid #f0f0f0;font-size:14px;">' +
+            '<strong>' + item.product_name + '</strong>' +
+            ' <span style="color:#888;font-size:12px;">— ' + price + ' | Stock: ' + item.quantity + '</span>' +
+            '</div>');
+          $row.on('mouseenter', function(){ $(this).css('background','#f5f8ff'); });
+          $row.on('mouseleave', function(){ $(this).css('background','#fff'); });
+          $row.on('click', function() {
+            // Agregar a la factura simulando la selección en el dropdown de la tabla
+            var tableLength = $('#productTable tbody tr').length;
+            var lastRowId = tableLength > 0 ? parseInt($('#productTable tbody tr:last').attr('id').replace('row','')) : 0;
+            var targetRowId = lastRowId;
+            // Si la última fila ya tiene un producto elegido, agregar una nueva
+            var lastSelect = $('#productName' + targetRowId);
+            if (lastSelect.length && lastSelect.val() !== '') {
+              addRow(function() {
+                var newLen = $('#productTable tbody tr').length;
+                var newId = parseInt($('#productTable tbody tr:last').attr('id').replace('row',''));
+                selectProductInRow(newId, item.product_id);
+              });
+            } else {
+              selectProductInRow(targetRowId, item.product_id);
+            }
+            $('#manualProductSearch').val('');
+            $('#manualSearchResults').hide().empty();
+          });
+          $list.append($row);
+        });
+        $list.show();
+      });
+    }, 300);
+  });
+
+  // Selecciona un producto por ID en una fila específica de la tabla
+  function selectProductInRow(rowId, productId) {
+    var $select = $('#productName' + rowId);
+    if ($select.length) {
+      $select.val(productId);
+      getProductData(rowId);
+    }
+  }
+
+  // Cerrar dropdown manual al hacer clic fuera
+  $(document).on('click', function(e) {
+    if (!$(e.target).closest('#tab-manual').length) {
+      $('#manualSearchResults').hide();
+    }
+  });
 </script>

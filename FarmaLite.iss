@@ -1,7 +1,7 @@
 [Setup]
 AppName=FarmaLite
 AppVersion=1.2.0
-AppPublisher=Project Develop
+AppPublisher=LuisTj
 DefaultDirName={autopf}\FarmaLite
 DefaultGroupName=FarmaLite
 OutputDir=.\Output

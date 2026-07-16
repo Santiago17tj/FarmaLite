@@ -41,8 +41,8 @@ Source: "php\*"; DestDir: "{app}\php"; Flags: ignoreversion recursesubdirs creat
 ; Aplicación web
 Source: "www\*"; DestDir: "{app}\www"; Flags: ignoreversion recursesubdirs createallsubdirs
 
-; Solo la primera vez: instalar la base de datos vacía original en ProgramData
-Source: "www\database\farmacia_template.db"; DestDir: "{commonappdata}\FarmaLite\data"; DestName: "farmacia.db"; Flags: onlyifdoesntexist uninsneveruninstall
+; La base de datos se instala siempre pero sin sobreescribir datos existentes (ver [Code])
+Source: "www\database\farmacia_template.db"; DestDir: "{commonappdata}\FarmaLite\data"; DestName: "farmacia_template.db"; Flags: ignoreversion uninsneveruninstall
 
 [Icons]
 Name: "{autodesktop}\FarmaLite"; Filename: "{app}\FarmaLite.exe"; IconFilename: "{app}\logo.ico"
@@ -50,6 +50,47 @@ Name: "{group}\FarmaLite"; Filename: "{app}\FarmaLite.exe"; IconFilename: "{app}
 Name: "{group}\Desinstalar FarmaLite"; Filename: "{uninstallexe}"
 
 [Code]
+// Al iniciar la instalación: preguntar si es instalación nueva o reinstalación
+function InitializeSetup(): Boolean;
+var
+  DbPath: String;
+  Answer: Integer;
+begin
+  Result := True;
+  DbPath := ExpandConstant('{commonappdata}\FarmaLite\data\farmacia.db');
+  if FileExists(DbPath) then
+  begin
+    Answer := MsgBox(
+      'FarmaLite detectó una instalación previa.' + #13#10#13#10 +
+      '¿Desea REINICIAR la base de datos con las credenciales originales?' + #13#10 + #13#10 +
+      'Seleccione "Sí" para borrar la base de datos antigua e instalar con las credenciales correctas.' + #13#10 +
+      'Seleccione "No" para conservar todos los datos existentes.',
+      mbConfirmation, MB_YESNO
+    );
+    if Answer = idYes then
+    begin
+      DeleteFile(DbPath);
+    end;
+  end;
+end;
+
+// Después de instalar: si no existe farmacia.db, copiar la plantilla
+procedure CurStepChanged(CurStep: TSetupStep);
+var
+  TemplatePath, DbPath: String;
+begin
+  if CurStep = ssPostInstall then
+  begin
+    DbPath     := ExpandConstant('{commonappdata}\FarmaLite\data\farmacia.db');
+    TemplatePath := ExpandConstant('{commonappdata}\FarmaLite\data\farmacia_template.db');
+    if not FileExists(DbPath) then
+    begin
+      FileCopy(TemplatePath, DbPath, False);
+    end;
+  end;
+end;
+
+// Al desinstalar: preguntar si borrar datos
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 var
   ResultCode: Integer;

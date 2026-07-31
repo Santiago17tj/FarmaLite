@@ -8,7 +8,7 @@ if(empty($term)) {
     exit;
 }
 
-$sql = "SELECT product_name, rate, quantity, bno, expdate FROM product WHERE status = 1 AND active = 1 AND (barcode = ? OR product_name LIKE ?) AND quantity > 0 ORDER BY expdate ASC LIMIT 1";
+$sql = "SELECT product_name, rate, quantity, bno, expdate FROM product WHERE status = 1 AND active = 1 AND (barcode = ? OR product_name LIKE ?) ORDER BY expdate ASC LIMIT 1";
 $stmt = $connect->prepare($sql);
 $stmt->bindValue(1, $term);
 $stmt->bindValue(2, '%' . $term . '%');

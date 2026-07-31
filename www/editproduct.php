@@ -208,4 +208,41 @@ $result = $connect->query($sql)->fetch(PDO::FETCH_ASSOC);
         <?php include('./constant/layout/footer.php'); ?>
 
         <script src="custom/js/product-pricing.js"></script>
-        <script src="custom/js/product.js"></script>
+        
+        <!-- Script para evitar la redirección a JSON crudo y usar AJAX puro -->
+        <script>
+        $(document).ready(function() {
+            $('#editProductForm').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+                $("#createCategoriesBtn").text("Actualizando...").prop("disabled", true);
+                
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        try {
+                            var res = typeof response === 'string' ? JSON.parse(response) : response;
+                            if(res.success) {
+                                alert("✅ " + res.messages);
+                                window.location.href = 'product.php';
+                            } else {
+                                alert("❌ Error: " + res.messages);
+                                $("#createCategoriesBtn").text("Actualizar").prop("disabled", false);
+                            }
+                        } catch(err) {
+                            alert("❌ Error interno del servidor al procesar la solicitud.");
+                            $("#createCategoriesBtn").text("Actualizar").prop("disabled", false);
+                        }
+                    },
+                    error: function() {
+                        alert("❌ Error de conexión al actualizar el medicamento.");
+                        $("#createCategoriesBtn").text("Actualizar").prop("disabled", false);
+                    }
+                });
+            });
+        });
+        </script>

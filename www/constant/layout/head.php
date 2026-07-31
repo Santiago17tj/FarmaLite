@@ -28,9 +28,7 @@ include __DIR__ . "/../pharmacy.php";
   <link href="assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
   <link href="assets/css/lib/owl.theme.default.min.css" rel="stylesheet" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fuentes del sistema - no requiere internet, carga instantáneo -->
   <link href="assets/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
 
   <link href="assets/css/helper.css" rel="stylesheet">

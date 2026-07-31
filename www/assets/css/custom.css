@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   background-color: var(--background) !important;
   color: var(--text-main) !important;
 }
@@ -36,13 +36,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--border-radius-md) !important;
   border: 1px solid var(--border) !important;
   box-shadow: var(--shadow-sm) !important;
-  transition: all 0.3s ease;
   margin-bottom: 24px;
 }
 
 .card:hover {
   box-shadow: var(--shadow-md) !important;
-  transform: translateY(-2px);
 }
 
 .card-title {
@@ -86,19 +84,15 @@ h1, h2, h3, h4, h5, h6 {
 .media-left.meida.media-middle i {
   font-size: 40px !important;
   color: rgba(255, 255, 255, 0.8) !important;
-  transition: transform 0.3s ease;
-}
-
-.dashboard .card:hover .media-left i {
-  transform: scale(1.1) rotate(5deg);
 }
 
 /* BUTTONS */
 .btn {
   border-radius: var(--border-radius-sm) !important;
   font-weight: 500 !important;
-  padding: 8px 16px !important;
-  transition: all 0.2s ease !important;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  min-height: 40px;
 }
 
 .btn-primary {
@@ -108,8 +102,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover {
   background-color: #0050E6 !important;
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
 }
 
 /* TABLES */
@@ -157,12 +149,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* SIDEBAR & HEADER */
 .sidebar-nav ul li a {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   font-weight: 500 !important;
   color: var(--text-muted) !important;
   border-radius: 0 20px 20px 0 !important;
   margin-right: 16px;
-  transition: all 0.2s ease;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
 }
 
 .sidebar-nav ul li a:hover, .sidebar-nav ul li a.active {

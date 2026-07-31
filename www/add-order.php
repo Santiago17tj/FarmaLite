@@ -181,7 +181,7 @@ echo "<div class='div-request div-hide'>add</div>";
                             <select class="form-control" name="productName[]" id="productName<?php echo $x; ?>" onchange="getProductData(<?php echo $x; ?>)">
                               <option value="">~~Seleccionar~~</option>
                               <?php
-                              $productSql = "SELECT * FROM product WHERE active = 1 AND status = 1 AND quantity != 0";
+                              $productSql = "SELECT * FROM product WHERE active = 1 AND status = 1";
                               $productData = $connect->query($productSql);
 
                               while ($row = $productData->fetch(PDO::FETCH_BOTH)) {

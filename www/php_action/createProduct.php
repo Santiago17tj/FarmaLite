@@ -5,8 +5,7 @@ require_once "core.php";
 $valid["success"] = ["success" => false, "messages" => []];
 
 if ($_POST) {
-    $productName = $_POST["productName"];
-    $productImage = $_POST["productImage"];
+    $productName = $_POST["productName"] ?? '';
     $barcode = isset($_POST["barcode"]) ? trim($_POST["barcode"]) : "";
     $barcodeParam = $barcode !== "" ? $barcode : null;
     $quantity = $_POST["quantity"];

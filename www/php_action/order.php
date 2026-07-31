@@ -100,9 +100,9 @@ if ($_POST) {
                     throw new Exception("Producto no encontrado en la base de datos.");
                 }
 
-                if ($pData['quantity'] < $pQty) {
-                    throw new Exception("Stock insuficiente para: " . $pData['product_name'] . " (Disponible: " . $pData['quantity'] . ")");
-                }
+                // if ($pData['quantity'] < $pQty) {
+                //     throw new Exception("Stock insuficiente para: " . $pData['product_name'] . " (Disponible: " . $pData['quantity'] . ")");
+                // }
 
                 $today = date("Y-m-d");
                 if ($pData['expdate'] < $today) {

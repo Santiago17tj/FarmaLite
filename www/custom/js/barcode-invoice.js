@@ -48,10 +48,10 @@ function addProductToInvoice(productId) {
 	if (existingRow) {
 		var qty = Number($("#quantity" + existingRow).val()) + 1;
 		var available = Number($("#available_quantity" + existingRow).text());
-		if (qty > available) {
-			showBarcodeFeedback('Stock insuficiente (disponible: ' + available + ')', true);
-			return false;
-		}
+		// if (qty > available) {
+		// 	showBarcodeFeedback('Stock insuficiente (disponible: ' + available + ')', true);
+		// 	return false;
+		// }
 		$("#quantity" + existingRow).val(qty);
 		getTotal(existingRow);
 		showBarcodeFeedback('Cantidad actualizada', false);

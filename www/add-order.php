@@ -114,17 +114,17 @@ echo "<div class='div-request div-hide'>add</div>";
                   <div class="row">
                     <label class="col-sm-2 control-label">Nombre Cliente</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Nombre Cliente" autocomplete="off" / value="Consumidor Final" >
+                      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Nombre Cliente" autocomplete="off" value="Consumidor Final" />
                     </div>
-
-                    <label class="col-sm-2 control-label">Móvil </label>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Número de Contacto" autocomplete="off" pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required / value="0000000000" >
-                    </div>
-
-
                   </div>
-
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label for="clientContact" class="col-sm-2 control-label">Contacto del cliente</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Número de Contacto" autocomplete="off" pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required value="0000000000" />
+                    </div>
+                  </div>
                 </div>
 
                 <!-- Buscador: tabs para código de barras o nombre manual -->

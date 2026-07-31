@@ -1,11 +1,11 @@
 [Setup]
 AppName=FarmaLite
-AppVersion=1.2.0
+AppVersion=1.3.0
 AppPublisher=LuisTj
 DefaultDirName={autopf}\FarmaLite
 DefaultGroupName=FarmaLite
 OutputDir=.\Output
-OutputBaseFilename=FarmaLite_Setup_1.2
+OutputBaseFilename=FarmaLite_Setup_1.3
 Compression=lzma2/ultra
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64

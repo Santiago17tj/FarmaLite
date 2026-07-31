@@ -105,7 +105,7 @@ if ($_POST) {
                 // }
 
                 $today = date("Y-m-d");
-                if ($pData['expdate'] < $today) {
+                if (!empty($pData['expdate']) && $pData['expdate'] < $today) {
                     $settingStmt = $connect->query("SELECT value FROM settings WHERE key = 'block_expired'");
                     $blockExpired = $settingStmt->fetchColumn();
                     if ($blockExpired === '1' || $blockExpired === false) {

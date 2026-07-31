@@ -18,7 +18,7 @@ $barcode = trim($_POST['barcode']);
 
 $stmt = $connect->prepare("SELECT product_id, product_name, product_image, brand_id, categories_id, quantity, purchase_price, rate, mrp, bno, expdate, barcode, active, status
 		FROM product
-		WHERE barcode = ? AND status = 1 AND active = 1 AND quantity > 0
+		WHERE barcode = ? AND status = 1 AND active = 1
         ORDER BY expdate ASC
 		LIMIT 1");
 $stmt->bindValue(1, $barcode);

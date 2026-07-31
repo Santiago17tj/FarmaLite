@@ -212,7 +212,7 @@ $result = $connect->query($sql)->fetch(PDO::FETCH_ASSOC);
         <!-- Script para evitar la redirección a JSON crudo y usar AJAX puro -->
         <script>
         $(document).ready(function() {
-            $('#editProductForm').on('submit', function(e) {
+            $('#submitProductForm').on('submit', function(e) {
                 e.preventDefault();
                 var form = $(this);
                 $("#createCategoriesBtn").text("Actualizando...").prop("disabled", true);

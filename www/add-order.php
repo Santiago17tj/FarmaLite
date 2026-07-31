@@ -257,7 +257,7 @@ echo "<div class='div-request div-hide'>add</div>";
           <div class="row">
             <label for="discount" class="col-sm-2 control-label">Descuento</label>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" / pattern="^[0-9]+$" / value="0" >
+              <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" pattern="^[0-9]+$" value="0" />
             </div>
             <label for="grandTotal" class="col-sm-2 control-label">Total</label>
             <div class="col-sm-4">

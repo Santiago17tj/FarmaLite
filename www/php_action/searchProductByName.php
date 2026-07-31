@@ -15,7 +15,7 @@ if (strlen($q) < 2) {
 $stmt = $connect->prepare(
     "SELECT product_id, product_name, sell_price, quantity
      FROM product
-     WHERE status = 1 AND active = 1 AND quantity > 0
+     WHERE status = 1 AND active = 1
        AND LOWER(product_name) LIKE LOWER(:q)
      ORDER BY product_name
      LIMIT 15"

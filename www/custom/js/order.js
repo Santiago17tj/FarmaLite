@@ -499,12 +499,12 @@ function getProductData(row = null) {
                 var currentQty = Number($("#quantity"+duplicateRow).val()) || 0;
                 var available = Number($("#available_quantity"+duplicateRow).text()) || 0;
                 
-                if ((currentQty + 1) > available) {
-                    alert('Stock insuficiente (disponible: ' + available + ')');
-                } else {
+                // if ((currentQty + 1) > available) {
+                //     alert('Stock insuficiente (disponible: ' + available + ')');
+                // } else {
                     $("#quantity"+duplicateRow).val(currentQty + 1);
                     getTotal(duplicateRow);
-                }
+                // }
                 
                 // Limpia y elimina esta nueva fila
                 $("#productName"+row).val('');

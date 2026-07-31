@@ -21,17 +21,15 @@ if ($_POST) {
     $expdate = $_POST["expdate"];
     $productStatus = $_POST["productStatus"];
 
-    $image = $_FILES["Medicine"]["name"];
-    $target = "../assets/myimages/" . basename($image);
-    $upload = move_uploaded_file($_FILES["Medicine"]["tmp_name"], $target);
-
-    if ($upload) {
-        $msg = "Image uploaded successfully";
-        echo $msg;
-    } else {
-        $msg = "Failed to upload image";
-        echo $msg;
-        exit();
+    $image = "";
+    if (isset($_FILES["Medicine"]) && $_FILES["Medicine"]["error"] === UPLOAD_ERR_OK && $_FILES["Medicine"]["name"] !== "") {
+        $image = $_FILES["Medicine"]["name"];
+        $targetDir = "../assets/myimages/";
+        if (!is_dir($targetDir)) {
+            @mkdir($targetDir, 0777, true);
+        }
+        $target = $targetDir . basename($image);
+        move_uploaded_file($_FILES["Medicine"]["tmp_name"], $target);
     }
 
     $orderDate = date("Y-m-d");
